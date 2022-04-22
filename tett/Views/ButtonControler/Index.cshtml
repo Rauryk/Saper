@@ -1,0 +1,16 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+ @using (Html.BeginForm("sprawdz","ButtonControler"))
+    {    tett.moje.ButtonControler button = new tett.moje.ButtonControler();
+string pole= button.klocek;
+        @for (var i = 0; i < 10; i++)
+            {
+                @for (var ii = 0; ii < 10; ii++)
+                {
+                    <button type= "submit" name="pole" value=@i@ii>@pole</button>    
+                }
+            <br />
+            } 
+    }

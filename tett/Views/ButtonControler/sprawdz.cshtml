@@ -1,0 +1,47 @@
+﻿@page
+@*
+
+
+*@ 
+
+@using (Html.BeginForm("sprawdz","ButtonControler",FormMethod.Post))
+{
+    tett.moje.ButtonControler buttonControler = new tett.moje.ButtonControler();
+  
+
+    
+    @for (var i = 0; i < 10; i++)
+            {
+                @for (var ii = 0; ii < 10; ii++)
+                { 
+                //
+               if(@czypokazac(@i.ToString()+@ii.ToString())){
+                <button type= "submit" name="pole"   value=@i@ii> @pokaz(@i.ToString()+@ii.ToString())</button>
+            }
+            else
+            {
+                <button type= "submit" name="pole"   value=@i@ii>X</button>
+            }
+
+
+
+        }
+            <br />
+            } 
+  }
+@{
+    string pokaz(string a){
+        tett.moje.ButtonControler buttonControler = new tett.moje.ButtonControler();
+
+
+        return buttonControler.klocek= buttonControler.pokaz(a);
+
+
+    }
+    bool czypokazac(string a)
+    { tett.moje.ButtonControler buttonControler = new tett.moje.ButtonControler();
+
+        return buttonControler.Czypokazac(a);
+    }
+
+}
