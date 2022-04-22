@@ -6,7 +6,7 @@ namespace tett.moje
     {
        public static List<(int, string, ButtonControler,int)> lista = new List<(int, string, ButtonControler,int)>();
         Random Random = new Random();
-        public string klocek="x";
+        public string klocek="X";
 
         public string IleBomb(string a, int[] bomby)
         {
