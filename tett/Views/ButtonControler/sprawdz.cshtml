@@ -8,39 +8,40 @@
 {
     tett.moje.ButtonControler buttonControler = new tett.moje.ButtonControler();
   
+  
+    @for (var i = 0; i < 10; i++)
+    {
+        @for (var ii = 0; ii < 10; ii++)
+        { 
+            if(@czypokazac(@i.ToString()+@ii.ToString()))
+                        {
+                            <button type= "submit" name="pole" style="width: 40px;height:40px"  value=@i@ii> 
+                            @pokaz(@i.ToString()+@ii.ToString())</button>
+                        }
+                    else
+                        {
+                            <button type= "submit" name="pole" style="width: 40px;height:40px"   value=@i@ii>X</button>
+                        }
+                }
+        <br />
+    }
+  
+    
 
     
-    @for (var i = 0; i < 10; i++)
-            {
-                @for (var ii = 0; ii < 10; ii++)
-                { 
-                //
-               if(@czypokazac(@i.ToString()+@ii.ToString())){
-                <button type= "submit" name="pole"   value=@i@ii> @pokaz(@i.ToString()+@ii.ToString())</button>
-            }
-            else
-            {
-                <button type= "submit" name="pole"   value=@i@ii>X</button>
-            }
-
-
-
-        }
-            <br />
-            } 
-  }
+}
 @{
     string pokaz(string a){
         tett.moje.ButtonControler buttonControler = new tett.moje.ButtonControler();
 
 
-        return buttonControler.klocek= buttonControler.pokaz(a);
+        return buttonControler.klocek= buttonControler.pokaz(a).Item1;
 
 
     }
     bool czypokazac(string a)
     { tett.moje.ButtonControler buttonControler = new tett.moje.ButtonControler();
-
+       
         return buttonControler.Czypokazac(a);
     }
 
