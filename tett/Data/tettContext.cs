@@ -15,6 +15,6 @@ namespace tett.Data
         {
         }
 
-        public DbSet<tett.Models.Pole> Pole { get; set; }
+        
     }
 }

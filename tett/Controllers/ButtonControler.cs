@@ -4,11 +4,11 @@ namespace tett.moje
 {
     public class ButtonControler : Controller
     {
-        private const string V = "0";
+        //private const string V = "0";
         public static List<(int, string, ButtonControler, int)> lista = new List<(int, string, ButtonControler, int)>();
         Random Random = new Random();
-        public string klocek = "X";
-
+        public string klocek = "X",stan_gry=string.Empty;
+        
 
         public string IleBomb(string a, int[] bomby)
         {
@@ -60,10 +60,14 @@ namespace tett.moje
         {
             pokaz(pole);
             int ii = lista.FindIndex(x => x.Item1 == Int32.Parse(pole));
-
+            
             var item = lista.FirstOrDefault(x => x.Item1 == ii);
-
-            if (item.Item2 == "0" && item.Item4 >= 0)
+            if (item.Item2 == "B")
+            {
+                Console.Write("sad");
+                stan_gry = "Przegrana";
+            }
+                    if (item.Item2 == "0" && item.Item4 >= 0)
             {
                 if (item.Item2 == string.Empty)
                     Console.WriteLine("pusty item2" + item.Item2);
@@ -161,7 +165,11 @@ namespace tett.moje
             return false;
 
         }
+        public string Fstan_gry()
+        {
 
+            return stan_gry;
+        }
 
 
     }
